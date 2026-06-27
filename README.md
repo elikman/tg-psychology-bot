@@ -1,4 +1,4 @@
-####TG Psychology Bot
+# TG Psychology Bot
 
 Telegram-бот для ознакомительного психологического интервью с использованием искусственного интеллекта.
 
@@ -9,17 +9,12 @@ Telegram-бот для ознакомительного психологичес
 Сохранение отчётов в SQLite
 Свободный диалог с ИИ после прохождения интервью
 Повторное прохождение интервью
-Используемые технологии
-Python 3.11+
-Aiogram 3
-OpenRouter API
-DeepSeek Chat V3
-SQLite
-Aiosqlite
-Структура проекта
 
+## Используемые технологии
+Python 3.11+, Aiogram 3, OpenRouter API, DeepSeek Chat V3, SQLite, Aiosqlite
+
+# Структура проекта:
 tg_psychology_bot/
-
 ├── ai/
 
 │ └── openai_client.py
@@ -42,46 +37,56 @@ tg_psychology_bot/
 
 └── README.md
 
-Установка
+# Установка. Как развернуть проект на локальной машине
+Клонировать репозиторий и перейти в него в командной строке:
 
-Клонировать репозиторий:
+```
+git clone https://github.com/elikman/tg-psychology-bot.git
+```
 
-git clone https://github.com/YOUR_USERNAME/tg-psychology-bot.git
-
-Перейти в папку проекта:
-
+```
 cd tg-psychology-bot
+```
 
-Создать виртуальное окружение:
+Cоздать и активировать виртуальное окружение:
 
-python -m venv venv
+```
+python3 -m venv venv
+```
 
-Активировать виртуальное окружение:
+* Если у вас Linux/macOS
 
-Windows:
+    ```
+    source venv/bin/activate
+    ```
 
-venv\Scripts\activate
+* Если у вас windows
 
-Linux / macOS:
+    ```
+    source venv/scripts/activate
+    ```
 
-source venv/bin/activate
+Установить зависимости из файла `requirements.txt`:
 
-Установить зависимости:
+```
+python3 -m pip install --upgrade pip
+```
 
+```
 pip install -r requirements.txt
+```
 
 Настройка
 
 Создать файл .env:
-
-BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN
-
-OPENROUTER_API_KEY=YOUR_OPENROUTER_API_KEY
-
-##Запуск
-```bash
-python main.py
 ```
+BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN
+OPENROUTER_API_KEY=YOUR_OPENROUTER_API_KEY
+```
+Запуск
+```
+python main.py
+
 Использование
 Отправить команду:
 
@@ -93,8 +98,3 @@ python main.py
 💬 Диалог
 или начать заново:
 🔄 Новое интервью
-
-**Важно**
-Бот предназначен исключительно для ознакомительных целей.
-Он не ставит диагнозы, не определяет психические расстройства и не заменяет консультацию специалиста.
-Все результаты являются информационными и не должны использоваться в качестве медицинского заключения.

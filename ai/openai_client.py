@@ -12,9 +12,24 @@ async def generate_final_report(
     questions,
     answers
 ):
+    """
+    Формирует итоговый психологический отчёт.
+
+    Объединяет вопросы и ответы пользователя,
+    отправляет их в модель DeepSeek через OpenRouter
+    и возвращает структурированный ознакомительный отчёт.
+
+    Args:
+        questions (list): Список вопросов интервью.
+        answers (list): Ответы пользователя.
+
+    Returns:
+        str: Итоговый отчёт, сформированный искусственным интеллектом.
+    """
 
     interview = ""
 
+    # Формирование текста интервью
     for q, a in zip(
         questions,
         answers
@@ -24,6 +39,7 @@ async def generate_final_report(
             f"Ответ: {a}\n\n"
         )
 
+    # Отправка интервью в модель искусственного интеллекта
     response = await client.chat.completions.create(
         model="deepseek/deepseek-chat-v3-0324",
         temperature=0.4,
@@ -86,4 +102,5 @@ async def generate_final_report(
         ]
     )
 
+    # Возвращаем сформированный отчёт
     return response.choices[0].message.content

@@ -1,6 +1,8 @@
 from dotenv import load_dotenv
 import os
 
+""" Модуль конфигурации проекта. Загружает переменные окружения из файла .env и предоставляет их другим модулям проекта. """
+
 load_dotenv()
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
